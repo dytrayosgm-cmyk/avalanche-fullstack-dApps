@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["file:///home/dytra/Documents/Course%20dApps/pamulang-university-short-course/avalanche-fullstack-dapps/apps/frontend/app/provider.tsx"],"sourcesContent":["'use client';\n\nimport { WagmiProvider, createConfig, http } from 'wagmi';\nimport { avalancheFuji } from 'wagmi/chains';\nimport { QueryClient, QueryClientProvider } from '@tanstack/react-query';\n\nconst queryClient = new QueryClient();\n\nconst config = createConfig({\n  chains: [avalancheFuji],\n  transports: {\n    [avalancheFuji.id]: http(),\n  },\n});\n\nexport function Providers({ children }: { children: React.ReactNode }) {\n  return (\n    <WagmiProvider config={config}>\n      <QueryClientProvider client={queryClient}>\n        {children}\n      </QueryClientProvider>\n    </WagmiProvider>\n  );\n}"],"names":[],"mappings":";;;;;AAEA;AAAA;AAAA;AACA;AACA;AAAA;AAJA;;;;;AAMA,MAAM,cAAc,IAAI,gNAAW;AAEnC,MAAM,SAAS,IAAA,kMAAY,EAAC;IAC1B,QAAQ;QAAC,2MAAa;KAAC;IACvB,YAAY;QACV,CAAC,2MAAa,CAAC,EAAE,CAAC,EAAE,IAAA,yLAAI;IAC1B;AACF;AAEO,SAAS,UAAU,EAAE,QAAQ,EAAiC;IACnE,qBACE,kQAAC,oLAAa;QAAC,QAAQ;kBACrB,cAAA,kQAAC,iOAAmB;YAAC,QAAQ;sBAC1B;;;;;;;;;;;AAIT"}}]
+}
